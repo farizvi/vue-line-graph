@@ -1,15 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <Graph />
+  <div id="app">
+    <LineGraph />
+  </div>  
 </template>
 
 <script>
-import Graph from './components/Graph.vue'
+import LineGraph from './components/line-graph.vue'
 
 export default {
   name: 'App',
   components: {
-    Graph
+    LineGraph
   }
 }
 </script>
