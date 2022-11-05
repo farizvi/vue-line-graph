@@ -12,6 +12,7 @@ import {
   PointElement,
   CategoryScale,  
 } from "chart.js";
+import { format, parseISO} from "date-fns";
 
 import expenseData from "../data/data.json";
 
@@ -65,7 +66,8 @@ export default defineComponent({
         let sum = entry[1].reduce((accumulator, object) => {
           return accumulator + object.amount;
         }, 0);
-        resultArray.push({ date: entry[0], expense: sum });
+        
+        resultArray.push({ date: format(new Date(parseISO(entry[0])), "MMMM dd"), expense: sum });
       }
     });
 
